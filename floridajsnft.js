@@ -2,7 +2,7 @@ const http = require("http"); // standard http server
 const express = require("express"); // express library
 const path = require("path"); // express has a method for using local path. but now.sh doesn't like it.
 const app = express(); // Express server (we seperate to introduce middleware) you could also do: app = require("express")()
-const port = process.env.PORT || 8080; // use any port you want or use a enviromental PORT variable
+const port = 5021; // use any port you want or use a enviromental PORT variable
 app.use(express.json()); // Now express no longer needs the body-parser middleware and has it's own.
 app.set('view engine', 'ejs'); // I choose the "EJS" view engines. Other popular are hbs, pub and hogan
 app.set("views", path.join(__dirname, `/views`)); // specify the location of the "views". NOT needed for dev but NOW.SH needs it
