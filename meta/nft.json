@@ -1,0 +1,14 @@
+{
+    "name": "FloridaJS NFT gift",
+    "description": "This is the NFT that all attendees to the FloridaJS Presentation got! Lucky you!",
+    "external_url": "https://floridajs.com",
+    "collection_name": "FloridaJS NFTs",
+    "attributes": [
+      {
+        "trait_type": "CollectionNumber", 
+        "value": "0"
+      }
+    ],
+    "animation_url": "https://floridajs.com/images/logo.png",
+    "image": "https://floridajs.com/images/logo.png"
+  }

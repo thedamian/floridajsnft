@@ -1,0 +1,8 @@
+{
+    "name": "FloridaJS NFTs",
+    "description": "FloridaJS (Florida's largest Developer Meetup) NFT Collection",
+    "image": "https://floridajs.com/images/logo.png",
+    "external_link": "https://floridajs.com",
+    "seller_fee_basis_points": 100,
+    "fee_recipient": "0x79A4105C64548aABffB53d555F3441f0b2f3Dd03"
+  }
