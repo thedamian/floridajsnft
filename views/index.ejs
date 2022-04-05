@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Ethers Library-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.5.4/ethers.umd.min.js" integrity="sha512-xmbPx0riylir51GhTZCFd20yS7NYZNpfDTbEWBjDRzs+UaGb2RyjtASTVtF2ydQWp3xkso9j4sJj39PdSH8/EA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <title>FloridaJS NFT Minting</title>
+</head>
+<body>
+    <h1>FloridaJS NFT Minting Example</h1>
+    <button onclick="signin()">Get your NFT </button><BR>
+    Metamask will come up and ask you to sign a message. <BR><BR>
+<script>
+// check if user has metamask installed
+if (!window.ethereum)   alert("No crypto wallet found. Please install metamask. No Eth needed!");
+// get message from backend to sign
+var MessageToSign =  "This is FloridaJS NFTs Minting page asking you to prove who you are.!";
+var signature = ""; // not yet. let's ask for it in the signin
+
+async function signin() {
+    const addresses = await window.ethereum.request({method:'eth_requestAccounts'});
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+    signature = await signer.signMessage(MessageToSign);
+    console.log("signature",signature);
+    let mined = await fetch("/mint/"+signature,).then(res=> res.json())
+    if (mined.error) {
+        alert(mined.error);
+    } else {
+        alert("Successfully minted");
+    }
+}
+</script>
+</body>
+</html>
