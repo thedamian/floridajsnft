@@ -6,7 +6,7 @@ const port = 5021; // use any port you want or use a enviromental PORT variable
 app.use(express.json()); // Now express no longer needs the body-parser middleware and has it's own.
 app.set('view engine', 'ejs'); // I choose the "EJS" view engines. Other popular are hbs, pub and hogan
 app.set("views", path.join(__dirname, `/views`)); // specify the location of the "views". NOT needed for dev but NOW.SH needs it
-const mint = require("./mint")
+const mintLib = require("./mint")
 const mintedaddress= [];
 
 app.get("/",(req,res)=> {
@@ -14,12 +14,12 @@ app.get("/",(req,res)=> {
   });
 
 // example of a POST from the front page.
-app.post("/mint/:addr", async (req,res) => {
-    let addr = eq.params.addr; // the "name" input field from the front page
-    if (!mintedaddress.contains(addr)) {
+app.get("/mint/:addr", async (req,res) => {
+    let addr = req.params.addr; // the "name" input field from the front page
+    if (!mintedaddress.includes(addr)) {
     console.log("minting to:",addr);
     mintedaddress.push(addr);
-    await mintedaddress.mint(addr);
+    await mintLib.mint(addr);
     res.json({"success":"true"});
   } else {
     res.json({"error":"One per customer. It costs me money buddy!"});

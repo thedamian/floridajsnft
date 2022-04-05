@@ -27,9 +27,18 @@
   },
   "homepage": "https://github.com/thedamian/floridajsnft#readme",
   "dependencies": {
+    "@eth-optimism/hardhat-ovm": "^0.2.4",
+    "@nomiclabs/hardhat-ethers": "^2.0.5",
+    "@nomiclabs/hardhat-waffle": "^2.0.3",
+    "@tenderly/hardhat-tenderly": "^1.0.13",
+    "chalk": "^5.0.1",
+    "dotenv": "^16.0.0",
     "ejs": "^3.1.6",
+    "ethers": "^5.6.2",
     "express": "^4.17.3",
-    "hardhat": "^2.9.2",
-    "path": "^0.12.7"
+    "hardhat": "^2.9.3",
+    "hardhat-deploy": "^0.11.4",
+    "path": "^0.12.7",
+    "web3": "^1.7.1"
   }
 }
