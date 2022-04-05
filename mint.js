@@ -1,4 +1,6 @@
 const { ethers } = require("hardhat");
+const Web3 = require("web3");
+const web3 = new Web3();
 
 module.exports =  {
         mint:  async (signature ) => { // example:  toAddress = "0x79A4105C64548aABffB53d555F3441f0b2f3Dd03"
