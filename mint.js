@@ -10,7 +10,7 @@ module.exports =  {
              const FloridaJSPresentation = await ethers.getContractAt('FloridaJSPresentation', "0x2116515c1b6fb146b370dd407df3e31e2d9bd07d") //<-- if you want to instantiate a version of a contract at a specific address!
   
              console.log("FloridaJSPresentation",FloridaJSPresentation)
-             const working = await FloridaJSPresentation.safeMint(toAddress,"https://raw.githubusercontent.com/thedamian/floridajsnft/main/meta/nft.json",{gasLimit:400000})
+             const working = await FloridaJSPresentation.safeMint(toAddress,"https://thedamian.github.io/floridajsnft/meta/nft.json",{gasLimit:400000})
             console.log("working",working);
         } // mint
 } // module.export
